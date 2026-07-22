@@ -183,3 +183,12 @@ Geliştiriciler ve mimariyi incelemek isteyenler için `docs/` klasörü altınd
 - [Yeni Bir Mahkeme İstemcisi Eklemek (CLIENT_DEVELOPMENT.md)](./docs/CLIENT_DEVELOPMENT.md)
 - [API ve Komut Referansı (API_REFERENCE.md)](./docs/API_REFERENCE.md)
 - [Örnek Kullanım ve Hukuki Araştırma (EXAMPLE_USAGE.md)](./docs/EXAMPLE_USAGE.md)
+
+## Lisans
+
+Bu proje **PolyForm Noncommercial License 1.0.0** ile lisanslanmıştır.
+
+- **Ticari olmayan** her kullanıma izin verilir (kişisel çalışma, araştırma, eğitim kurumları, kamu/kâr amacı gütmeyen kuruluşlar).
+- **Ticari kullanım yasaktır.** Ticari kullanım için ayrı bir lisans gerekir; iletişim için proje sahibine başvurun.
+
+Tam metin: [LICENSE](./LICENSE) · <https://polyformproject.org/licenses/noncommercial/1.0.0>

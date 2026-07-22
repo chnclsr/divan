@@ -183,3 +183,12 @@ For developers and those who want to examine the architecture, you can check the
 - [Adding a New Court Client (CLIENT_DEVELOPMENT.md)](./docs/CLIENT_DEVELOPMENT.md)
 - [API and Command Reference (API_REFERENCE.md)](./docs/API_REFERENCE.md)
 - [Example Usage and Legal Research (EXAMPLE_USAGE.md)](./docs/EXAMPLE_USAGE.md)
+
+## License
+
+This project is licensed under the **PolyForm Noncommercial License 1.0.0**.
+
+- **Any noncommercial use** is permitted (personal study, research, educational institutions, public/nonprofit organizations).
+- **Commercial use is prohibited.** A separate license is required for commercial use; contact the project owner.
+
+Full text: [LICENSE](./LICENSE) · <https://polyformproject.org/licenses/noncommercial/1.0.0>
