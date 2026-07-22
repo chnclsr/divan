@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Divan</h1>
-  <p><b>Enterprise-Grade Legal Research Platform & MCP Server</b></p>
+  <p><b>Modular Legal Research Platform & MCP Server</b></p>
   <p>
     <a href="https://img.shields.io/badge/python-3.9+-blue.svg"><img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="Python 3.9+"></a>
     <a href="https://img.shields.io/badge/architecture-SOLID-success.svg"><img src="https://img.shields.io/badge/architecture-SOLID-success.svg" alt="SOLID Architecture"></a>
