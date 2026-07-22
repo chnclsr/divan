@@ -2,6 +2,76 @@
 
 Divan projesi, modüler, test edilebilir ve sürdürülebilir bir yapıda kalmasını sağlamak amacıyla **SOLID prensipleri** çerçevesinde katmanlı bir mimariyle tasarlanmıştır. Bu dokümanda projenin katmanlı yapısı ve kullanılan tasarım desenleri açıklanmaktadır.
 
+## Sistem Mimarisi Şeması
+
+Aşağıdaki şema, kullanıcı arayüzlerinden dış kurum API'lerine kadar olan istek akışını ve katmanlar arasındaki ilişkileri göstermektedir:
+
+```mermaid
+graph TD
+    %% User/Client Interfaces
+    subgraph Interfaces ["Arayüz Katmanı"]
+        MCP["MCP Server (Model Context Protocol)"]
+        CLI["CLI Tool (Typer/Rich)"]
+        API["REST API (FastAPI)"]
+    end
+
+    %% Services
+    subgraph Services ["Servis Katmanı (İş Mantığı)"]
+        USS["UnifiedSearchService<br/>(Eşzamanlı Arama)"]
+        DS["DocumentService<br/>(Belge Detay/Yönetim)"]
+        ES["ExportService<br/>(Word/JSON Dışa Aktarım)"]
+    end
+
+    %% Client Factory & Clients
+    subgraph Clients ["İstemci Katmanı"]
+        Factory["CourtClientFactory"]
+        BaseClient["BaseCourtClient (Ortak İstek Yönetimi)"]
+        YargitayClient["Yargıtay İstemcisi"]
+        DanistayClient["Danıştay İstemcisi"]
+        AYMClient["AYM İstemcisi"]
+        EmsalClient["UYAP Emsal İstemcisi"]
+    end
+
+    %% Infrastructure & Resiliency
+    subgraph Infra ["Altyapı Katmanı (Infrastructure)"]
+        Cache["LRU Cache<br/>(Bellek İçi Önbellek)"]
+        RateLimiter["Token Bucket Rate Limiter"]
+        CB["Circuit Breaker<br/>(Devre Kesici)"]
+        HttpClient["ResilientHttpClient<br/>(Retry / Backoff)"]
+    end
+
+    %% External APIs
+    subgraph ExtAPIs ["Dış Kurum API'leri"]
+        BedestenAPI["Bedesten (Adalet Bakanlığı) API"]
+        AYMAPI["AYM Kararlar Bilgi Bankası"]
+        UyapAPI["UYAP Emsal Karar API"]
+    end
+
+    %% Connections
+    MCP & CLI & API --> USS & DS & ES
+    USS & DS --> Factory
+    Factory --> YargitayClient & DanistayClient & AYMClient & EmsalClient
+    YargitayClient & DanistayClient & AYMClient & EmsalClient -.-> BaseClient
+    BaseClient --> Cache
+    Cache -- "Önbellek Miss" --> RateLimiter
+    RateLimiter --> CB
+    CB --> HttpClient
+    HttpClient --> BedestenAPI & AYMAPI & UyapAPI
+
+    %% Styling
+    classDef interfaces fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef services fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+    classDef clients fill:#fff3e0,stroke:#e65100,stroke-width:2px;
+    classDef infra fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
+    classDef extapis fill:#ffebee,stroke:#b71c1c,stroke-width:2px;
+
+    class MCP,CLI,API interfaces;
+    class USS,DS,ES services;
+    class Factory,BaseClient,YargitayClient,DanistayClient,AYMClient,EmsalClient clients;
+    class Cache,RateLimiter,CB,HttpClient infra;
+    class BedestenAPI,AYMAPI,UyapAPI extapis;
+```
+
 ## Katmanlı Mimari
 
 Sistem, sorumlulukların ayrılması prensibine uygun olarak katmanlı bir yapıda geliştirilmiştir. Bağımlılıkların asgari düzeyde tutulması hedeflenmiştir.
