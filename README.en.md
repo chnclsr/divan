@@ -192,3 +192,12 @@ This project is licensed under the **PolyForm Noncommercial License 1.0.0**.
 - **Commercial use is prohibited.** A separate license is required for commercial use; contact the project owner.
 
 Full text: [LICENSE](./LICENSE) · <https://polyformproject.org/licenses/noncommercial/1.0.0>
+
+## Disclaimer
+
+This project is intended for **informational and educational purposes only**.
+
+- Divan is a tool that provides access to publicly available court/decision data. **No commercial rights are claimed over this data**; the content belongs to the relevant official institutions.
+- The information provided **does not constitute legal advice**. Consult a qualified lawyer for binding legal opinions.
+- The license (PolyForm Noncommercial 1.0.0) covers only the **software code** in this repository, not the accessed data sources.
+- The software is provided "as is"; no liability is accepted for accuracy, timeliness, or consequences of use.

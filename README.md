@@ -192,3 +192,12 @@ Bu proje **PolyForm Noncommercial License 1.0.0** ile lisanslanmıştır.
 - **Ticari kullanım yasaktır.** Ticari kullanım için ayrı bir lisans gerekir; iletişim için proje sahibine başvurun.
 
 Tam metin: [LICENSE](./LICENSE) · <https://polyformproject.org/licenses/noncommercial/1.0.0>
+
+## Sorumluluk Reddi (Disclaimer)
+
+Bu proje yalnızca **bilgilendirme ve eğitim** amaçlıdır.
+
+- Divan, herkese açık mahkeme/karar verilerine erişim sağlayan bir araçtır. **Bu veriler üzerinde herhangi bir ticari hak iddia edilmez**; içerik ilgili resmi kurumlara aittir.
+- Sağlanan bilgiler **hukuki tavsiye niteliği taşımaz**. Bağlayıcı hukuki görüş için yetkili bir avukata başvurun.
+- Lisans (PolyForm Noncommercial 1.0.0) yalnızca bu deponun **yazılım kodunu** kapsar, erişilen veri kaynaklarını değil.
+- Yazılım "olduğu gibi" sunulur; doğruluk, güncellik veya kullanımdan doğan sonuçlar için sorumluluk kabul edilmez.
